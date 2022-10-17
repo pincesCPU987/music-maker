@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-body {
+* {
   font-family:'Press Start 2P', cursive;
-  font-size:15px;
+}
+body {
   background-color:#000000;
 }
 a {
@@ -25,6 +26,7 @@ a:active {
   text-decoration:underline;
 }
 p {
+  font-size:14px;
   color:#00f;
 }
 h1 {
@@ -32,4 +34,8 @@ h1 {
 }
 h3 {
   color:#0f0;
+}
+.codedivs {
+  background-color:#777777;
+  color:#0000ff;
 }
