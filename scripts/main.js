@@ -2,7 +2,7 @@ let urls = ['a0','a#0','b0','c1','c#1','d1','d#1','e1','f1','f#1','g1','g#1','a1
 var objects = []
 for(var i = 0;i < urls.length();i++){
   var audio = new Audio();
-  audio.src = 'https://pincescpu987.github.io/music-notes/' + urls[i];
+  audio.src = 'https://pincescpu987.github.io/music-notes/' + urls[i].replace('#','%23') + '.ogg';
   objects.push(audio)
 }
 objects[80].play();
