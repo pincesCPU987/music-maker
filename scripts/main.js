@@ -10,7 +10,7 @@ btn.addEventListener("click", async () => {
   });
   await Tone.loaded();
   const pitchShift = new Tone
-    .PitchShift({pitch: -8})
+    .PitchShift({pitch: -1})
     .toDestination()
   ;
   player.connect(pitchShift);
