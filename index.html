@@ -69,6 +69,16 @@
         objects.push(audio);
 
       }
+      function timeout(ms) {
+      	return new Promise(resolve => setTimeout(resolve, ms))
+      }
+      async function sleep(ms,fn,args) {
+      	await timeout(ms);
+        await eval('return null');
+      }
+      function playNote(note){
+      	objects[Number(note) - 1].play();
+      }
       async function run(){
         var script1 = document.querySelector('#script1');
         var script2 = document.querySelector('#script2');
@@ -79,7 +89,22 @@
         var split1 = script1.value.split('\n');
         var split2 = script2.value.split('\n');
         var split3 = script3.value.split('\n');
-        console.log(split1);
+        while(line1id < split1.length){
+        	var line = split1[line1id];
+          var linesplit = line.split(',')
+          var command = linesplit[0];
+          if(command == 'playnote'){
+          	if(linesplit.length == 3){
+            	playNote(linesplit[1])
+              sleep(linesplit[2] * 1000)
+            } else {
+            	alert('Parse error in Script 1.');
+            }
+          } else {
+          	alert('Parse error in Script 1.');
+          }
+          line1id++;
+        }
       }
     </script>
   </body>
