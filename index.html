@@ -84,13 +84,14 @@
           var numPlaying = 0;
           while(true){
           	for(var j in objects){
-            	if(objects[j].currentTime == 0){
+            	if(objects[j].paused){
               	numPlaying += 1;
               }
             }
-            if(numPlaying > 88){
+            if(numPlaying > 87){
             	break;
             }
+            numPlaying = 0;
           }
           line1id++;
         }
